@@ -2,22 +2,17 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<<<<<<< HEAD
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  
-  <title>Create Project</title>
-=======
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Project</title>
->>>>>>> origin/dev
-  <meta name="description" content="">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <title>Create Project</title>
+  <meta name="description" content="An web app to help you share your project ideas and find individuals to help you get it done.">
+
+  <!-- FONT LIBS -->
   <script src="//use.typekit.net/gfb2mjm.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
-<<<<<<< HEAD
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
-  <link rel="stylesheet" href="bower_components/metaphor/dist/css/metaphor.css">
+  <link rel="stylesheet" href="./bower_components/metaphor/dist/css/metaphor.css">
   <link rel="stylesheet" href="./bower_components/metaphor/dist/css/stickyFooter.css">
 </head>
 <body>
@@ -31,7 +26,7 @@
               <div class="bar"></div>
               <div class="bar"></div>
             </div>
-            <h3>Project Intake</h3>
+            <h3>Create Project</h3>
           </div>
           <ul class="primary-nav__links">
             <li><a href="" class="primary-nav__link">Home</a></li>
@@ -55,12 +50,12 @@
                     </div>
                     <div class = "col-sm-6">
                       <label class = "label--required pull-left" for = "password">Password</label>
-                      <input id = "password" type="password" placeholder="Password">                      
+                      <input id = "password" type="password" placeholder="Password">
+                      
                     </div>
                   </div>
                 </div>
               </div>
-
               <div class = "modal__footer">
                 <button class = "btn btn-primary">Login</button>
               </div>
@@ -74,8 +69,8 @@
 
     <main id="main" class="main" role="main">
       <div class="section section--md type--center" style="background-color: rgba(216, 210, 196, 0.2);">
-        <div class="container"> 
-          <h1>Create Project</h1>
+        <div class="container">
+          <h2>Create Project</h2>
 
           <form action="" method="post">
             <div class="row">
@@ -83,90 +78,45 @@
               <div class="col-sm-6">
                 <div class="form__group">
                   <label class="label--required" for="example2">Project Name</label>
-                  <input id="example2" type="email" placeholder="project name">
+                  <input id="date" type="text" placeholder="project name">
                 </div>
               </div>
+
 
               <div class="col-sm-6">
                 <div class="form__group">
                   <label for="example0">Date</label>
                   <input id="example0" class="datepicker" type="text" placeholder="MM/DD/YY">
                 </div>
-              </div>
-
-            <div class="form__group">
-              <label for="example4">Comments</label>
-              <textarea id="example4" placeholder="Project Description" rows="4"></textarea>
+              </div>             
+              
             </div>
-            <br>
-            <a class="btn btn-primary">Submit</a>
+            <div class="form__group">
+              <label for="example4">Description</label>
+              <textarea id="example4" placeholder="Description..." rows="4"></textarea>
+            </div>
           </form>
-
-          </div>
+          <br>
+          <a class="btn btn-primary">Submit</a>
         </div>
-      </main>
-
-    </div>
-
-    
-    <div id="footer">
-      Team One     
-    </div>
-
-    <script src="bower_components/metaphor/dist/js/metaphor.js"></script>
-  </body>
-  </html>
-=======
-
-  <link rel="stylesheet" href="bower_components/metaphor/dist/css/metaphor.css">
-</head>
-<body>
-  <nav class="primary-nav primary-nav--cream">
-  <div class="container">
-    <div class="primary-nav__mobile">
-      <div class="primary-nav__btn">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
       </div>
-      <div class="primary-nav__brand"><span class="sr-only">California State University, Northridge (CSUN)</span></div>
-    </div>
-    <ul class="primary-nav__links">
-    <a class="btn btn-default btn-sm" data-modal="#login" style = "margin-top:5px;">Login</a>
-<!--       <li><a class="primary-nav__link active" href="#">Nav Link</a></li>
-      <li><a class="primary-nav__link" href="#">Nav Link</a></li>
-      <li><a class="primary-nav__link" href="#">Nav Link</a></li> -->
-    </ul>
+    </main>
   </div>
-  </nav>
-  <h1>Create Project</h1>
 
-  <form method="post">
-          <div >
-            <table >
-              <tr>
-                <!-- project name input -->
-                <td style="padding: 0cm 0.5cm 0.5cm 0cm"><label>Project Name</label></td>
-                <td style="padding: 0cm 0.5cm 0.5cm 0cm"><input type="text" name="event_name" id="event_name"></td>
-              </tr>
-              <tr>
-                <!-- Timeline input -->
-                <td style="padding: 0cm 0.5cm 0.5cm 0cm"><label  for="date">Project Timeline</label></td>
-                <td style="padding: 0cm 0.5cm 0.5cm 0cm"><input  id="event_date_from" name="event_date" placeholder="MM/DD/YYY" type="date"><input  id="event_date_to" name="event_date" placeholder="MM/DD/YYY" type="date"></td>
-              </tr>
-               <tr>
-                <!-- Description input -->
-                <td style="padding: 0cm 0.5cm 0.5cm 0cm"><label>Project Description</label></td>
-                <td style="padding: 0cm 0.5cm 0.5cm 0cm"><textarea style="width:8cm; height:3cm;"></textarea>
-              </tr>
-            </table>
-          </div>
-          <div>
-            <button class="btn btn-primary " name="submit" type="submit">Submit</button>
-          </div>
-   </form>
+  <div id="footer">
+    Team One     
+  </div>
 
-  <script src="bower_components/metaphor/dist/js/metaphor.js"></script>
+  <!-- SCRIPTS -->
+  <script src="./bower_components/metaphor/dist/js/metaphor.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77781058-1', 'auto');
+  ga('send', 'pageview');
+  </script>
 </body>
 </html>
->>>>>>> origin/dev
