@@ -35,6 +35,34 @@
             <li><a href="" class="primary-nav__link">Contact</a></li>
             <a class="btn btn-default btn-sm" data-modal="#login" style = "margin-top:5px;">Login</a>
           </ul>
+            <!--Login modal-->
+            <div id="login" class="modal__outer">
+              <div class = "modal">
+                <div class = "modal__header">
+                    <h3>Login</h3>
+                </div>
+                <div class = "modal__content">
+                  <div class="row">
+                  <div class = "form__group">
+                    <div class = "col-sm-6">
+                        <label class = "label--required pull-left" for = "username">Username</label>
+                        <input id = "username" type="email" placeholder="Username">
+                    </div>
+                    <div class = "col-sm-6">
+                        <label class = "label--required pull-left" for = "password">Password</label>
+                        <input id = "password" type="password" placeholder="Password">
+                      
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class = "modal__footer">
+                  <button class = "btn btn-primary">Login</button>
+                </div>
+                <div class = "modal__close" data-modal-close="#login"><i class="fa fa-times" aria-hidden="true"></i></div>
+              </div>
+            </div> 
+
         </div>
       </nav>
     </div>
