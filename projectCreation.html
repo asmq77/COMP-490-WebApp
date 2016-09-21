@@ -31,8 +31,8 @@
         </div>
         <ul class="primary-nav__links">
           <li><a href="" class="primary-nav__link">Home</a></li>
-          <li><a href="" class="primary-nav__link active">Project</a></li>
-          <li><button class="btn btn-default" data-modal="#test1">Login</button></li>
+          <li><a href="" class="primary-nav__link">About</a></li>
+          <li><button class="btn btn-default" data-modal="#test1">Logout</button></li>
         </ul>
       </div>
     </nav>
@@ -41,28 +41,20 @@
   <div id="test1" class="modal__outer">
   <div class="modal modal--sm">
     <div class="modal__header">
-      <h3>Login</h3>
+      <h3>Logout</h3>
     </div>
     <div class="modal__content">
       <div class="row">
         <div class="col-sm-12">
           <div class="form__group">
-            <label class="label--required" for="example5">Email</label>
-            <input id="example5" type="text" placeholder="Email">
-          </div>
-        </div>
-        <div class="col-sm-12">
-          <div class="form__group">
-            <label class="label--required" for="example6">Password</label>
-            <input id="example6" type="password" placeholder="Password">
+            <p>you are logged out</p>
           </div>
         </div>
       </div>
     </div>
     <div class="modal__footer">
       <div class="pull-right">
-        <button class="btn btn-default" data-modal-close="#test1">Cancel</button>
-        <button class="btn btn-primary">Sign in</button>
+        <button class="btn btn-default" data-modal-close="#test1">Okay</button>        
       </div>
     </div>
     <div class="modal__close" data-modal-close="#test1"><i class="fa fa-times" aria-hidden="true"></i></div>
@@ -81,35 +73,31 @@
   </div>
   <div class="section">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <p><strong> list </strong></p>
-          <ul class="list list--arrows list--hover">
-            <li class="list__item"><a href="#vision"></a></li>
-            <li class="list__item"><a href="#getting-started"></a></li>
-            <li class="list__item"><a href="#open-source"></a></li>
-            <li class="list__item"><a href="#accessibility"></a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9">   
-          
-                   
+      <div class="row">        
+        <div class="col-sm-12">         
           <br>     
-          
           <h2 id="forms" class="type--header type--thin">Create Project</h2>
           <form action="">
             <div class="row">
               
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <div class="form__group">
                   <label class="label--required" for="example3">Project Title</label>
                   <input id="example3" type="text" placeholder="Password">
                 </div>
               </div>
-              <div class="col-sm-6">
+
+              <div class="col-sm-4">
                 <div class="form__group">
-                  <label for="example0">Date</label>
-                  <input id="example0" class="datepicker" type="text" placeholder="03/23/90">
+                  <label for="example0">Start Date</label>
+                  <input id="example0" class="datepicker" type="text" placeholder="03/01/90">
+                </div>
+              </div> 
+
+              <div class="col-sm-4">
+                <div class="form__group">
+                  <label for="example0">End Date</label>
+                  <input id="example0" class="datepicker" type="text" placeholder="09/30/90">
                 </div>
               </div>             
             
