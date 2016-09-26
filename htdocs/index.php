@@ -16,9 +16,6 @@ if($_POST['username']) {
     $_SESSION['username'] = $usname;
     $_SESSION['id'] = $uid;
 
-    //now direct to users feed
-    flush();
-    header(www.google.com);
     echo "<h2> Logged In !! </h2>";
   } else {
     echo "<h2> Username and Password was incorrect </br> 
