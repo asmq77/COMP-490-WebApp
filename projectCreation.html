@@ -77,38 +77,39 @@
         <div class="col-sm-12">         
           <br>     
           <h2 id="forms" class="type--header type--thin">Create Project</h2>
-          <form action="">
+          <form action="createProj.php" method="post">
             <div class="row">
               
               <div class="col-sm-4">
                 <div class="form__group">
                   <label class="label--required" for="example3">Project Title</label>
-                  <input type="text" placeholder="Password">
+                  <input type="text" name="title" placeholder="Password">
                 </div>
               </div>
 
               <div class="col-sm-4">
                 <div class="form__group">
                   <label>Start Date</label>
-                  <input class="datepicker" type="text" placeholder="03/01/90">
+                  <input class="datepicker" name="startDate" type="text" placeholder="03/01/90">
                 </div>
               </div> 
 
               <div class="col-sm-4">
                 <div class="form__group">
                   <label>End Date</label>
-                  <input class="datepicker" type="text" placeholder="09/30/90">
+                  <input class="datepicker" type="text" name="endDate" placeholder="09/30/90">
                 </div>
               </div>             
             
             </div>
             <div class="form__group">
               <label for="example4">Desciption</label>
-              <textarea id="example4" placeholder="Description..." rows="6"></textarea>
+              <input id="example4" placeholder="Description..." name="description" rows="6">
             </div>
+            <input class="btn btn-primary btn-lg" type="submit" name="submit">
           </form>
           <br>
-          <a class="btn btn-primary btn-lg">Submit</a>
+         <!--  <a class="btn btn-primary btn-lg">Submit</a> -->
           <br>
       </div>
     </div>
