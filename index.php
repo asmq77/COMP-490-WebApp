@@ -1,8 +1,3 @@
-<?php
-  include './config/common.php';
-  print_r(getPDO());
-?>
-
 <!DOCTYPE HTML>
 <html class="no-js" lang="en">
 <head>
@@ -148,18 +143,10 @@
           <table class="table table--bordered table--padded td--hover">            
             <tbody>
               <tr>
-                <td><h1>Project #1</p></td>
-                <td><h1>Project #1</p></td>
-                <td><h1>Project #1</p></td>
-              </tr>
-              <tr>
-                <td><h1>Project #1</p></td>
-                <td><h1>Project #1</p></td>
-                <td><h1>Project #1</p></td>
+                <?php include './includes/listproject.php';?>
               </tr>
             </tbody>
           </table>
-          
         </div>
       </div>
     </div>
