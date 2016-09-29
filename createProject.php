@@ -6,7 +6,7 @@ $date = explode("/", $date);
 $datetime = new DateTime(); 
 $datetime->setDate($date[0], $date[1], $date[2]); 
 $sql = $pdh->prepare("INSERT INTO projects (title, start_date, end_date, description) VALUES (?,?,?,?)");
-if($sql->execute(["Asad's Project",$datetime,$datetime,"Hello World"])) {
+if($sql->execute(["Asad's Project",strval($datetime),strval($datetime),"Hello World"])) {
 	echo "New Record Successfully added!!";
 }
 ?>
