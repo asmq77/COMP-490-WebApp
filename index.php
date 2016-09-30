@@ -1,3 +1,25 @@
+<?php
+session_start();
+
+include './config/common.php';
+
+$uid = $_POST['uid'];
+$pwd = $_POST['pwd'];
+
+$dbh = getPDO();
+$stmt = $dbh->query("SELECT * FROM users");
+  
+while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  if($row['uid'] == $uid && $row['pwd'] == $pwd) {
+    $_SESSION['uid'] = $uid;
+
+    header('Location: login.php');    
+  } 
+}
+
+
+?>
+
 <!DOCTYPE HTML>
 <html class="no-js" lang="en">
 <head>
@@ -94,7 +116,7 @@
       <div class="modal__header">
         <h3>Login</h3>
       </div>
-      <form class="form" action="login.php" method="post" enctype="" >
+      <form class="form" method="post" enctype="" >
         <div class="modal__content">
           <div class="row">
             <div class="col-sm-12">
@@ -114,7 +136,7 @@
         <div class="modal__footer">
           <div class="pull-right">
             <button class="btn btn-default" data-modal-close="">Cancel</button>
-            <button class="btn btn-primary" type="Submit" >Login</button>
+            <button class="btn btn-primary" type="Submit" name="login" >Login</button>
           </div>
         </div>
       </form>
