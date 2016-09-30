@@ -7,6 +7,8 @@ $last = $_POST['last'];
 $uid = $_POST['uid'];
 $pwd = $_POST['pwd'];
 
+
+
 function isExist($first, $last, $uid) {
 	$dbh = getPDO();
 	$stmt = $dbh->query("SELECT * FROM users");
@@ -20,20 +22,17 @@ function isExist($first, $last, $uid) {
 			return false;
 		}
 	}
+
 }
 
-//if the user exist, the user cannot sign up
+//if the user exist, the user can't sign up
 if(isExist($first, $last, $uid)) {
 	echo "user exist";	
 }
-	
-//if user is not exist, the user can sign up
+
+//else, user does not exist, the user can sign up
 else{
-	echo "user igned up";
-	$dbh = getPDO();
-	$stmtTwo = $dbh->prepare ("INSERT INTO users (first, last, uid, pwd) 
-	VALUES (?, ?, ?, ?)");
-	$stmtTwo->execute(array("$first", "$last", "$uid", "$pwd"));
+	echo "user can sign up";
 } 
 
 //header("Location: index.php");

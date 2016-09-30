@@ -50,13 +50,13 @@
           <div class="row1">
             <div class="col-sm-6">
               <div class="form__group">
-                <label class="label--required" for="">first</label>
+                <label class="label--required" for="first">first</label>
                 <input type="text" name="first" placeholder="Firstname">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form__group">
-                <label class="label--required" for="">Last</label>
+                <label class="label--required" for="last">Last</label>
                 <input type="text" name="last" placeholder="Lastname">
               </div>
             </div>
@@ -64,13 +64,13 @@
           <div class="row2">
             <div class="col-sm-6">
               <div class="form__group">
-                <label class="label--required" for="">ID</label>
+                <label class="label--required" for="uid">ID</label>
                 <input type="text" name="uid" placeholder="Username">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form__group">
-                <label class="label--required" for="">Password</label>
+                <label class="label--required" for="pwd">Password</label>
                 <input type="password" name="pwd" placeholder="Password">
               </div>
             </div>
@@ -99,13 +99,13 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="form__group">
-                <label class="label--required" for="">ID</label>
+                <label class="label--required" for="uid">ID</label>
                 <input type="text" name="uid" placeholder="Username">
               </div>
             </div>
             <div class="col-sm-12">
               <div class="form__group">
-                <label class="label--required" for="">Password</label>
+                <label class="label--required" for="pwd">Password</label>
                 <input type="password" name="pwd" placeholder="Password">
               </div>
             </div>
