@@ -1,12 +1,3 @@
-<?php
-  include './config/common.php';
-  $dbh = getPDO();
-  if($dbh) {
-    echo "it works";
-  }
-
-?>
-
 <!DOCTYPE HTML>
 <html class="no-js" lang="en">
 <head>
@@ -152,14 +143,7 @@
           <table class="table table--bordered table--padded td--hover">            
             <tbody>
               <tr>
-                <td><h1>Project #1</h1></td>
-                <td><h1>Project #1</h1></td>
-                <td><h1>Project #1</h1></td>
-              </tr>
-              <tr>
-                <td><h1>Project #1</h1></td>
-                <td><h1>Project #1</h1></td>
-                <td><h1>Project #1</h1></td>
+               <?php include './includes/listproject.php';?>
               </tr>
             </tbody>
           </table>
