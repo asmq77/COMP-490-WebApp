@@ -1,3 +1,12 @@
+<?php
+  include './config/common.php';
+  $dbh = getPDO();
+  if($dbh) {
+    echo "it works";
+  }
+
+?>
+
 <!DOCTYPE HTML>
 <html class="no-js" lang="en">
 <head>
@@ -45,18 +54,18 @@
       <div class="modal__header">
         <h3>Sign Up</h3>
       </div>
-      <form class="form" action="signup.php" method="POST" enctype="multipart/form-data" >
+      <form class="form" action="signup.php" method="POST" enctype="" >
         <div class="modal__content">
           <div class="row1">
             <div class="col-sm-6">
               <div class="form__group">
-                <label class="label--required" for="example5">first</label>
+                <label class="label--required" for="">first</label>
                 <input type="text" name="first" placeholder="Firstname">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form__group">
-                <label class="label--required" for="example6">Last</label>
+                <label class="label--required" for="">Last</label>
                 <input type="text" name="last" placeholder="Lastname">
               </div>
             </div>
@@ -64,13 +73,13 @@
           <div class="row2">
             <div class="col-sm-6">
               <div class="form__group">
-                <label class="label--required" for="example5">ID</label>
+                <label class="label--required" for="">ID</label>
                 <input type="text" name="uid" placeholder="Username">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form__group">
-                <label class="label--required" for="example6">Password</label>
+                <label class="label--required" for="">Password</label>
                 <input type="password" name="pwd" placeholder="Password">
               </div>
             </div>
@@ -82,7 +91,7 @@
             <button class="btn btn-primary" type="submit">Sign Up</button>
           </div>
         </div>
-      </div>
+      </form>
       <div class="modal__close" data-modal-close="#test1"><i class="fa fa-times" aria-hidden="true"></i></div>
     </div>
   </div>
@@ -94,19 +103,19 @@
       <div class="modal__header">
         <h3>Login</h3>
       </div>
-      <form class="form" action="" method="post" enctype="" >
+      <form class="form" action="login.php" method="post" enctype="" >
         <div class="modal__content">
           <div class="row">
             <div class="col-sm-12">
               <div class="form__group">
-                <label class="label--required" for="example5">Email</label>
-                <input type="text" name="username" placeholder="Email">
+                <label class="label--required" for="">ID</label>
+                <input type="text" name="uid" placeholder="Username">
               </div>
             </div>
             <div class="col-sm-12">
               <div class="form__group">
-                <label class="label--required" for="example6">Password</label>
-                <input type="password" name="password" placeholder="Password">
+                <label class="label--required" for="">Password</label>
+                <input type="password" name="pwd" placeholder="Password">
               </div>
             </div>
           </div>
@@ -114,10 +123,10 @@
         <div class="modal__footer">
           <div class="pull-right">
             <button class="btn btn-default" data-modal-close="">Cancel</button>
-            <button class="btn btn-primary" name="Submit" >Sign in</button>
+            <button class="btn btn-primary" type="Submit" >Login</button>
           </div>
         </div>
-      </div>
+      </form>
       <div class="modal__close" data-modal-close="#test1"><i class="fa fa-times" aria-hidden="true"></i></div>
     </div>
   </div>
@@ -143,10 +152,18 @@
           <table class="table table--bordered table--padded td--hover">            
             <tbody>
               <tr>
-                <?php include './includes/listproject.php';?>
+                <td><h1>Project #1</h1></td>
+                <td><h1>Project #1</h1></td>
+                <td><h1>Project #1</h1></td>
+              </tr>
+              <tr>
+                <td><h1>Project #1</h1></td>
+                <td><h1>Project #1</h1></td>
+                <td><h1>Project #1</h1></td>
               </tr>
             </tbody>
           </table>
+          
         </div>
       </div>
     </div>
