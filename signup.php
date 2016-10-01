@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 include './config/common.php';
 
 $first = $_POST['first'];
@@ -13,10 +13,8 @@ function isExist($first, $last, $uid) {
 	
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		if(($row['first'] == $first && $row['last'] == $last) || $row['uid'] == $uid ) {
-			echo "return true<br>";
 			return true;
 		} else {
-			echo "return false<br>";
 			return false;
 		}
 	}
@@ -24,16 +22,14 @@ function isExist($first, $last, $uid) {
 
 //if the user exist, the user cannot sign up
 if(isExist($first, $last, $uid)) {
-	echo "user exist";	
-}
-	
-//if user is not exist, the user can sign up
-else{
-	echo "user signed up";
+	//echo "exist";
+	header('Location: index.php?SignUpMsg=no' . urlencode($SignUpMsg));
+} else {	//if user is not exist, the user can sign up
 	$dbh = getPDO();
 	$stmtTwo = $dbh->prepare ("INSERT INTO users (first, last, uid, pwd) 
 	VALUES (?, ?, ?, ?)");
 	$stmtTwo->execute(array("$first", "$last", "$uid", "$pwd"));
+	header('Location: index.php?SignUpMsg=Ok' . urlencode($SignUpMsg));
 } 
 
 //header("Location: index.php");

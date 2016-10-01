@@ -2,9 +2,9 @@
 
 ob_start();
 session_start();
-	echo $_SESSION['uid'];
+	//echo $_SESSION['uid'];
 	echo '<div class="alert alert--success">
-  	<strong>Success!</strong> Logged in.
+  	<strong>Login!</strong>
   	<a href="#" class="alert__close" data-alert-close>×</a>
 	</div>';
 
@@ -14,7 +14,7 @@ if (isset($_POST['logout'])){
 	session_unset();	
 	session_destroy();
 	
-	header('Location: index.php');
+	header('Location: index.php?Logout=' . urlencode($Message));
 }
 
 ?>

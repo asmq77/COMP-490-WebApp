@@ -3,6 +3,7 @@ session_start();
 
 include './config/common.php';
 
+//if user try to login
 if (isset($_POST['login'])){ 
   $uid = $_POST['uid'];
   $pwd = $_POST['pwd'];
@@ -19,6 +20,29 @@ if (isset($_POST['login'])){
   }
 }
 
+//if the user logout
+if (isset($_GET['Logout'])) {
+  echo '<div class="alert alert--warning">
+  <strong>Logout!</strong>
+  <a href="#" class="alert__close" data-alert-close>×</a>
+  </div>';  
+}
+
+//after check out
+if (isset($_GET['SignUpMsg'])) {
+  if($_GET['SignUpMsg'] == "Ok") {
+    echo '<div class="alert alert--success">
+    <strong>Thanks!</strong> You are registered.
+    <a href="#" class="alert__close" data-alert-close>×</a>
+  </div>';
+
+  } else {
+    echo '<div class="alert alert--warning">
+  <strong>Sorry!</strong> You are already registered, Please login
+  <a href="#" class="alert__close" data-alert-close>×</a>
+  </div>'; 
+  }
+}
 ?>
 
 <!DOCTYPE HTML>
