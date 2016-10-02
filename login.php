@@ -53,9 +53,11 @@ if (isset($_POST['logout'])){
         <ul class="primary-nav__links">
           <li><a href="index.html" class="primary-nav__link active">Home</a></li>
           <li><a href="about.html" class="primary-nav__link">About</a></li>
-          <form method="post">
-          	<li><button class="btn btn-default" type="submit" name="logout">Logout</button></li>	
-          </form>          
+          <li>
+	     <form method="post">
+          	   <button class="btn btn-default" type="submit" name="logout">Logout</button>	
+             </form>
+	 </li>
         </ul>
       </div>
     </nav>
@@ -66,11 +68,12 @@ if (isset($_POST['logout'])){
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h1 class="type--white type--thin type--marginless">Proposer</h1>
+          <h1 class="type--white type--thin type--marginless">Proposer
           
           <div class="pull-right">
-            <li><a href="projectCreation.html" class="btn btn-default" >Create Project</a></li>
-          </div>     
+            <a href="projectCreation.html" class="btn btn-default" >Create Project</a>
+          </div>
+	</h1>
         </div>    
       </div>
     </div>
