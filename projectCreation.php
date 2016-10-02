@@ -83,7 +83,7 @@
               <div class = "col-lg-12">
                 <div class = "form__group">
                   <label>Description</label>
-                  <input type = "text" name = "description" placeholder="Description">
+                  <textarea name="description" placeholder="description..." rows="7"></textarea>
                 </div>
               </div>
 
