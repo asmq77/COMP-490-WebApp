@@ -61,21 +61,7 @@ if (isset($_GET['SignUpMsg'])) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
   <link rel="stylesheet" href="./bower_components/metaphor/dist/css/metaphor.css">  
   <link rel="stylesheet" href="./bower_components/metaphor/dist/css/td.css">  
-  <style>
-  	#signUp {
-		top:15%;
-		right:50%;
-		outline: none;
-		overflow:hidden;
-	}
-
-	#login {
-		top:15%;
-		right:50%;
-		outline: none;
-		overflow: hidden;
-	}
-  </style>
+  <script src = "./bower_components/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
 
@@ -92,7 +78,7 @@ if (isset($_GET['SignUpMsg'])) {
           <a class="sr-only" href="#main">Skip to main content</a>
         </div>
         <ul class="primary-nav__links">
-          <li><a href="index.php" class="primary-nav__link active">Home</a></li>
+          <li><a href="index.html" class="primary-nav__link active">Home</a></li>
           <li><a href="about.html" class="primary-nav__link">About</a></li>
           <li><button class="btn btn-default" data-modal="#signUp">Sign Up</button></li>
           <li><button class="btn btn-default" data-modal="#login">Login</button></li>
@@ -150,6 +136,7 @@ if (isset($_GET['SignUpMsg'])) {
   </div>
 
 
+
   <div id="login" class="modal__outer">
     <div class="modal modal--sm">
       <div class="modal__header">
@@ -188,11 +175,11 @@ if (isset($_GET['SignUpMsg'])) {
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h1 class="type--white type--thin type--marginless">Proposer
+          <h1 class="type--white type--thin type--marginless">Proposer</h1>
+          
           <div class="pull-right">
-            <a href="projectCreation.html" class="btn btn-default" >Create Project</a>
-          </div>
-          </h1>     
+            <li><a href="projectCreation.html" class="btn btn-default" >Create Project</a></li>
+          </div>     
         </div>    
       </div>
     </div>
@@ -203,8 +190,20 @@ if (isset($_GET['SignUpMsg'])) {
         <div class="col-sm-12">   
           <table class="table table--bordered table--padded td--hover">            
             <tbody>
-              <tr>
+              <tr class='projectrow'>
                <?php include './includes/listproject.php';?>
+               <script>
+                   $( document ).ready(function() {
+                      $( "tr.projectrow td" ).on("click", function( event ) {
+                        var id = $(this).attr('id');
+                        console.log(id);
+                        if(typeof id != 'undefined'){
+                          window.location = "projectDisplay.php?pid=" + id;
+                        }
+                        
+                      });
+                    });
+              </script>
               </tr>
             </tbody>
           </table>
@@ -231,6 +230,7 @@ if (isset($_GET['SignUpMsg'])) {
 
   <!-- SCRIPTS -->
   <script src="./bower_components/metaphor/dist/js/metaphor.js"></script>
+  
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
