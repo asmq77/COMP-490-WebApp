@@ -1,6 +1,6 @@
-
-
-
+<?php
+  echo $_POST['description'];
+?>
 <!DOCTYPE HTML>
 <html class="no-js" lang="en">
 <head>
@@ -34,35 +34,11 @@
         <ul class="primary-nav__links">
           <li><a href="index.html" class="primary-nav__link">Home</a></li>
           <li><a href="about.html" class="primary-nav__link">About</a></li>
-          <li><button class="btn btn-default" data-modal="#test1">Logout</button></li>
+          
         </ul>
       </div>
     </nav>
   </div>
-
-  <div id="test1" class="modal__outer">
-  <div class="modal modal--sm">
-    <div class="modal__header">
-      <h3>Logout</h3>
-    </div>
-    <div class="modal__content">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="form__group">
-            <p>you are logged out</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal__footer">
-      <div class="pull-right">
-        <button class="btn btn-default" data-modal-close="#test1">Okay</button>        
-      </div>
-    </div>
-    <div class="modal__close" data-modal-close="#test1"><i class="fa fa-times" aria-hidden="true"></i></div>
-  </div>
-</div>
-
 
   <div class="section" style="background-color: #252525;">
     <div class="container">
@@ -79,13 +55,13 @@
         <div class="col-sm-12">         
           <br>     
           <h2 id="forms" class="type--header type--thin">Create Project</h2>
-          <form action="createProject.php" method="post">
+          <form action="" method = "post">
             <div class="row">
               
               <div class="col-sm-4">
                 <div class="form__group">
-                  <label class="label--required" for="example3">Project Title</label>
-                  <input type="text" name="title" placeholder="Password">
+                  <label class="label--required" for="title">Project Title</label>
+                  <input type="text" name="title" placeholder="Title">
                 </div>
               </div>
 
@@ -103,13 +79,22 @@
                 </div>
               </div>             
             
+
+              <div class = "col-lg-12">
+                <div class = "form__group">
+                  <label>Description</label>
+                  <input type = "text" name = "description" placeholder="Description">
+                </div>
+              </div>
+
+              
+              <button class="btn btn-primary btn-lg" type="submit" name="create">Create</button> 
+              
+
+              
             </div>
-            <div class="form__group">
-              <label for="example4">Desciption</label>
-              <input id="example4" placeholder="Description..." name="description" rows="6">
-            </div>
-            <input class="btn btn-primary btn-lg" type="submit" name="submit">
-          </form>
+            </form>
+            
           <br>
          <!--  <a class="btn btn-primary btn-lg">Submit</a> -->
           <br>
