@@ -1,4 +1,17 @@
+<?php
+ob_start();
+session_start();
 
+if (isset($_GET['home'])) {
+  if(isset($_SESSION['uid'])) {
+    header('Location: login.php');
+  } else {
+    header('Location: index.php');
+  }
+}
+
+
+?>
 <!DOCTYPE HTML>
 <html class="no-js" lang="en">
 <head>
@@ -29,47 +42,16 @@
           </div>
           <div class="primary-nav__brand"><span class="sr-only"></span></div>
           <a class="sr-only" href="#main">Skip to main content</a>
-        </div>
-        <ul class="primary-nav__links">
-          <li><a href="index.html" class="primary-nav__link">Home</a></li>
-          <li><a href="about.html" class="primary-nav__link active">About</a></li>
-          <li><button class="btn btn-default" data-modal="#test1">Login</button></li>
-        </ul>
+        </div>        
+        <form method="post">
+          <ul class="primary-nav__links">
+            <li><a href="about.php?home=" class="primary-nav__link" name="home">Home</a></li>
+            <li><a href="about.php" class="primary-nav__link active">About</a></li>
+          </ul>
+        </form>          
       </div>
     </nav>
   </div>
-
-  <div id="test1" class="modal__outer">
-    <div class="modal modal--sm">
-      <div class="modal__header">
-        <h3>Login</h3>
-      </div>
-      <div class="modal__content">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="form__group">
-              <label class="label--required" for="example5">Email</label>
-              <input id="example5" type="text" placeholder="Email">
-            </div>
-          </div>
-          <div class="col-sm-12">
-            <div class="form__group">
-              <label class="label--required" for="example6">Password</label>
-              <input id="example6" type="password" placeholder="Password">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal__footer">
-        <div class="pull-right">
-          <button class="btn btn-default" data-modal-close="#test1">Cancel</button>
-          <button class="btn btn-primary">Sign in</button>
-        </div>
-      </div>
-      <div class="modal__close" data-modal-close="#test1"><i class="fa fa-times" aria-hidden="true"></i></div>
-    </div>
-  </div>
-
 
   <div class="section" style="background-color: #252525;">
     <div class="container">
@@ -83,8 +65,8 @@
   <div class="section">
     <div class="container">
       <div class="row"> 
-      <div class="col-sm-1"> 
-      </div>       
+        <div class="col-sm-1"> 
+        </div>       
         <div class="col-sm-10">   
           <label class="label" for="example5" align="center" ><big>Project Intake</big></label>
           <p align="center">
@@ -94,7 +76,7 @@
             help find the right project for your set of skills. Or if you think there is a <br>
             problem that could be solved by a creator, you can submit a project to be considered.<br>
           </p>
-            <hr width="50%" align="center">
+          <hr width="50%" align="center">
           <p align="center">
             Since the website is designed with csun students and faculty in mind,<br>
             you will be able to log in with the the same account you use for all of your csun<br>
@@ -108,7 +90,7 @@
           </p>
         </div>
         <div class="col-sm-1"> 
-      </div>
+        </div>
       </div>
     </div>
   </div>

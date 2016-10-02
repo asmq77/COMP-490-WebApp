@@ -1,5 +1,7 @@
 <?php
 ob_start();
+session_start();
+
 include './config/common.php';
 
 $first = $_POST['first'];
@@ -22,16 +24,15 @@ function isExist($first, $last, $uid) {
 
 //if the user exist, the user cannot sign up
 if(isExist($first, $last, $uid)) {
-	//echo "exist";
-	header('Location: index.php?SignUpMsg=no' . urlencode($SignUpMsg));
+	$_SESSION['SignUp'] = "no";
+ 	header('Location: index.php');
 } else {	//if user is not exist, the user can sign up
 	$dbh = getPDO();
 	$stmtTwo = $dbh->prepare ("INSERT INTO users (first, last, uid, pwd) 
 	VALUES (?, ?, ?, ?)");
 	$stmtTwo->execute(array("$first", "$last", "$uid", "$pwd"));
-	header('Location: index.php?SignUpMsg=Ok' . urlencode($SignUpMsg));
+	$_SESSION['SignUp'] = "ok";
+	header('Location: index.php');
 } 
-
-//header("Location: index.php");
 
 ?>

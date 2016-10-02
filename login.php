@@ -2,19 +2,21 @@
 
 ob_start();
 session_start();
-	//echo $_SESSION['uid'];
-	echo '<div class="alert alert--success">
-  	<strong>Login!</strong>
-  	<a href="#" class="alert__close" data-alert-close>×</a>
-	</div>';
 
-if (isset($_POST['logout'])){ 
+  echo '<div class="alert alert--success">
+    <strong>Login!</strong>
+    <a href="#" class="alert__close" data-alert-close>×</a>
+  </div>';
 
-	session_start();
-	session_unset();	
-	session_destroy();
-	
-	header('Location: index.php?Logout=' . urlencode($Message));
+//if user press logout button
+if (isset($_POST['logout'])) { 
+
+  session_start();
+  session_unset($_SESSION['uid']);  
+  
+  $_SESSION['logout'] = 'True';
+  
+  header('Location: index.php');
 }
 
 ?>
@@ -52,7 +54,7 @@ if (isset($_POST['logout'])){
         </div>
         <ul class="primary-nav__links">
           <li><a href="login.php" class="primary-nav__link active">Home</a></li>
-          <li><a href="about.html" class="primary-nav__link">About</a></li>
+          <li><a href="about.php" class="primary-nav__link">About</a></li>
           <li>
           <form method="post">
           	<button class="btn btn-default" type="submit" name="logout">Logout</button>	

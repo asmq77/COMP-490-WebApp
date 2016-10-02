@@ -1,49 +1,69 @@
 <?php
+ob_start();
 session_start();
 
 include './config/common.php';
+
+//if user already login 
+if(isset($_SESSION['uid'])) {
+  header('Location: login.php'); 
+}
+
+//if user just logout
+if( (isset($_SESSION['logout']))) {    
+    echo '<div class="alert alert--warning">
+    <strong>Logout!</strong>
+    <a href="#" class="alert__close" data-alert-close>×</a>
+    </div>';
+    session_unset($_SESSION['logout']);
+}
+
+//If user just sign up
+if (isset($_SESSION['SignUp'])) {  
+  if($_SESSION['SignUp'] == "ok") {
+    echo '<div class="alert alert--success">
+    <strong>Thanks!</strong> You are registered.
+    <a href="#" class="alert__close" data-alert-close>×</a>
+  </div>';
+  session_unset($_SESSION['SignUp']);  
+  } else {
+    echo '<div class="alert alert--warning">
+  <strong>Sorry!</strong> You are already registered, Please login
+  <a href="#" class="alert__close" data-alert-close>×</a>
+  </div>';  
+  session_unset($_SESSION['SignUp']);  
+  }
+}
 
 //if user try to login
 if (isset($_POST['login'])){ 
   $uid = $_POST['uid'];
   $pwd = $_POST['pwd'];
-
+  
   $dbh = getPDO();
   $stmt = $dbh->query("SELECT * FROM users");
-    
+
+  //finding the user in db table
   while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     if($row['uid'] == $uid && $row['pwd'] == $pwd) {
-      $_SESSION['uid'] = $uid;
-
+      $_SESSION['uid'] = $uid;      
+      $_SESSION['logout'] = false;
       header('Location: login.php');    
     } 
   }
-}
 
-//if the user logout
-if (isset($_GET['Logout'])) {
-  echo '<div class="alert alert--warning">
-  <strong>Logout!</strong>
-  <a href="#" class="alert__close" data-alert-close>×</a>
-  </div>';  
-}
-
-//after check out
-if (isset($_GET['SignUpMsg'])) {
-  if($_GET['SignUpMsg'] == "Ok") {
-    echo '<div class="alert alert--success">
-    <strong>Thanks!</strong> You are registered.
-    <a href="#" class="alert__close" data-alert-close>×</a>
-  </div>';
-
-  } else {
+  //if user not found
+  if (!isset($_SESSION['uid'])) {
     echo '<div class="alert alert--warning">
-  <strong>Sorry!</strong> You are already registered, Please login
-  <a href="#" class="alert__close" data-alert-close>×</a>
-  </div>'; 
+    <strong>Unregistered!</strong>
+    <a href="#" class="alert__close" data-alert-close>×</a>
+    </div>';
   }
 }
+
+
 ?>
+
 
 <!DOCTYPE HTML>
 <html class="no-js" lang="en">
@@ -78,8 +98,8 @@ if (isset($_GET['SignUpMsg'])) {
           <a class="sr-only" href="#main">Skip to main content</a>
         </div>
         <ul class="primary-nav__links">
-          <li><a href="index.html" class="primary-nav__link active">Home</a></li>
-          <li><a href="about.html" class="primary-nav__link">About</a></li>
+          <li><a href="index.php" class="primary-nav__link active">Home</a></li>
+          <li><a href="about.php" class="primary-nav__link">About</a></li>
           <li><button class="btn btn-default" data-modal="#signUp">Sign Up</button></li>
           <li><button class="btn btn-default" data-modal="#login">Login</button></li>
         </ul>
