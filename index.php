@@ -197,7 +197,7 @@ if (isset($_POST['login'])){
         <div class="col-sm-12">
           <h1 class="type--white type--thin type--marginless">Proposer          
           <div class="pull-right">
-            <a href="projectCreation.html" class="btn btn-default" >Create Project</a>
+            <a href="projectCreation.php" class="btn btn-default" >Create Project</a>
           </div>
           </h1>     
         </div>    
